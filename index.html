@@ -1,58 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testify - Component Testing</title>
+    <title>Testify - 組件測試平台</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-    <h1>Testify</h1>
-    <nav>
-        <a href="#components">Components</a>
-        <a href="#tests">Tests</a>
-        <a href="#results">Results</a>
-    </nav>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-vial-virus"></i> Testify
+        </div>
+        <nav>
+            <a href="#components" class="nav-link active">組件</a>
+            <a href="#tests" class="nav-link">測試設定</a>
+            <a href="#results" class="nav-link">測試結果</a>
+        </nav>
+        <button id="theme-toggle" aria-label="切換深色模式">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
 </header>
 
-<section id="components">
-    <h2>Components to Test</h2>
-    <div class="component-list">
-        <!-- Components will be dynamically added here -->
-    </div>
-    <button id="addComponentBtn">Add New Component</button>
-</section>
+<main class="container">
+    <section id="components" class="card">
+        <h2><i class="fas fa-cubes icon"></i> 待測組件</h2>
+        <div class="component-list">
+            <!-- 組件將動態添加於此 -->
+            <div class="component-item-placeholder">
+                <p>尚無組件，請點擊下方按鈕新增。</p>
+            </div>
+        </div>
+        <button id="addComponentBtn" class="btn btn-primary"><i class="fas fa-plus-circle"></i> 新增組件</button>
+    </section>
 
-<section id="tests">
-    <h2>Test Configuration</h2>
-    <div class="test-config">
-        <label for="testType">Test Type:</label>
-        <select id="testType">
-            <option value="unit">Unit Test</option>
-            <option value="integration">Integration Test</option>
-            <option value="e2e">End-to-End Test</option>
-        </select>
-        <label for="testFramework">Test Framework:</label>
-        <select id="testFramework">
-            <option value="jest">Jest</option>
-            <option value="mocha">Mocha</option>
-            <option value="cypress">Cypress</option>
-        </select>
-    </div>
-</section>
+    <section id="tests" class="card">
+        <h2><i class="fas fa-cogs icon"></i> 測試設定</h2>
+        <div class="test-config">
+            <div class="form-group">
+                <label for="testType"><i class="fas fa-tasks"></i> 測試類型:</label>
+                <select id="testType" class="form-control">
+                    <option value="unit">單元測試 (Unit Test)</option>
+                    <option value="integration">整合測試 (Integration Test)</option>
+                    <option value="e2e">端對端測試 (End-to-End Test)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="testFramework"><i class="fas fa-tools"></i> 測試框架:</label>
+                <select id="testFramework" class="form-control">
+                    <option value="jest">Jest</option>
+                    <option value="mocha">Mocha</option>
+                    <option value="cypress">Cypress</option>
+                    <option value="playwright">Playwright</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="testEnvironment"><i class="fas fa-desktop"></i> 測試環境:</label>
+                <select id="testEnvironment" class="form-control">
+                    <option value="chrome">Chrome</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="safari">Safari</option>
+                    <option value="edge">Edge</option>
+                </select>
+            </div>
+        </div>
+    </section>
 
-<section id="results">
-    <h2>Test Results</h2>
-    <div class="results-display">
-        <!-- Test results will be displayed here -->
-    </div>
-    <button id="runTestsBtn">Run Tests</button>
-</section>
+    <section id="results" class="card">
+        <h2><i class="fas fa-poll icon"></i> 測試結果</h2>
+        <div class="results-display-wrapper">
+            <div class="results-display">
+                <p class="no-results">尚未執行任何測試。</p>
+                <!-- 測試結果將顯示於此 -->
+            </div>
+        </div>
+        <button id="runTestsBtn" class="btn btn-success"><i class="fas fa-play-circle"></i> 執行測試</button>
+    </section>
+</main>
 
 <footer>
-    <p>&copy; 2024 Testify. All rights reserved.</p>
+    <div class="container">
+        <p>&copy; <span id="currentYear"></span> Testify. All rights reserved. Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i>.</p>
+    </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
