@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testify - Component Testing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Testify</h1>
+    <nav>
+        <a href="#components">Components</a>
+        <a href="#tests">Tests</a>
+        <a href="#results">Results</a>
+    </nav>
+</header>
+
+<section id="components">
+    <h2>Components to Test</h2>
+    <div class="component-list">
+        <!-- Components will be dynamically added here -->
+    </div>
+    <button id="addComponentBtn">Add New Component</button>
+</section>
+
+<section id="tests">
+    <h2>Test Configuration</h2>
+    <div class="test-config">
+        <label for="testType">Test Type:</label>
+        <select id="testType">
+            <option value="unit">Unit Test</option>
+            <option value="integration">Integration Test</option>
+            <option value="e2e">End-to-End Test</option>
+        </select>
+        <label for="testFramework">Test Framework:</label>
+        <select id="testFramework">
+            <option value="jest">Jest</option>
+            <option value="mocha">Mocha</option>
+            <option value="cypress">Cypress</option>
+        </select>
+    </div>
+</section>
+
+<section id="results">
+    <h2>Test Results</h2>
+    <div class="results-display">
+        <!-- Test results will be displayed here -->
+    </div>
+    <button id="runTestsBtn">Run Tests</button>
+</section>
+
+<footer>
+    <p>&copy; 2024 Testify. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

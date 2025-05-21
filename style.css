@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #555;
+    text-align: center;
+}
+
+/* Navigation */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Components Section */
+.component-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.component-item {
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(33% - 20px); /* for 3 components in a row */
+    box-sizing: border-box;
+}
+
+/* Tests Section */
+.test-config {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.test-config label, .test-config select {
+    margin-bottom: 5px;
+}
+
+/* Results Section */
+.results-display {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .component-item {
+        width: calc(50% - 20px); /* for 2 components in a row */
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .component-item {
+        width: calc(100% - 20px); /* for 1 component in a row */
+    }
+}
